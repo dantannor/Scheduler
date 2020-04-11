@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+/**
+ * In charge of scheduling meetings
+ */
 @Component
 public class Scheduler {
     private List<Meeting> meetings;
@@ -81,7 +84,6 @@ public class Scheduler {
 
     private boolean invalidWeeklyHours(Meeting meeting, int minutes) {
         // Not handling cases where meetings can occupy two different weeks
-        // validate sum of working hours for day and week
         final int meetingWeek = meeting.getFromTime().getWeekOfWeekyear();
 
         int durationSum = minutes;
@@ -125,6 +127,10 @@ public class Scheduler {
         }
     }
 
+    /**
+     * Since we support setting events in the past, 'getNextMeeting' looks for events from now onwards
+     * @return
+     */
     public ResponseMsg getNextMeeting() {
         Optional<Meeting> res = meetings.stream()
                 .filter(m -> m.getFromTime()

@@ -7,6 +7,9 @@ import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * This is used to allow Joda time input
+ */
 @Configuration
 public class JacksonConfiguration {
 

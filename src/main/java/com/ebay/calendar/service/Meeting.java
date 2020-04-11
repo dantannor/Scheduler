@@ -4,6 +4,9 @@ import org.joda.time.Interval;
 import org.joda.time.LocalDateTime;
 import org.joda.time.Minutes;
 
+/**
+ * Meetings are based on date time to support year round schedules
+ */
 public class Meeting implements Comparable<Meeting>{
 
     private String title;
@@ -33,6 +36,11 @@ public class Meeting implements Comparable<Meeting>{
         return toTime;
     }
 
+    /**
+     * Compares meeting based on intervals and then according to the 'fromTime'
+     * @param that
+     * @return
+     */
     public int compareTo(Meeting that) {
         Interval meetingInterval = new Interval(fromTime.toDateTime(), toTime.toDateTime());
         Interval otherInterval = new Interval(that.getFromTime().toDateTime(), that.getToTime().toDateTime());
