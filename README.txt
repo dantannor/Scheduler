@@ -47,4 +47,3 @@ Assumptions/Thoughts:
 - I did not validate inputs (null, etc.)
 - I'm not blocking the ability to set meetings in the past (like Google Calendar) - no strict policy
 - It was written to use the method 'Set Meeting', which is not very RESTy, so I am being lenient with the URLs
-- I didn't use Java/Spring for a few years and my time on the project is limited, so there aren't tests and runtimes are not as optimal as I would like them to be. Not sure about the 'Spring' way to do things either.
